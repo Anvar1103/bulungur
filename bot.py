@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 
-TOKEN = "7961451848:AAEd6aJzWj5_2lCoMGtc4xnWP3EB6nJ8Fkk"
+TOKEN = ""
 
 # ---- /start ----
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -183,3 +183,4 @@ app = ApplicationBuilder().token(TOKEN).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle))
 app.run_polling()
+
