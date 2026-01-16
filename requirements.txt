@@ -1,2 +1,4 @@
-python-telegram-bot==20.8
-matplotlib
+python-telegram-bot==20.3
+matplotlib==3.8.0
+
+
