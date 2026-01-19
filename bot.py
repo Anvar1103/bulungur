@@ -3,8 +3,10 @@ matplotlib.use('Agg')  # Serverda grafika uchun
 import matplotlib.pyplot as plt
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
+import os
 
-TOKEN = "BOT_TOKEN"
+TOKEN = os.getenv("BOT_TOKEN")
+
 
 # ---- /start ----
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -183,5 +185,6 @@ app = ApplicationBuilder().token(TOKEN).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle))
 app.run_polling()
+
 
 
